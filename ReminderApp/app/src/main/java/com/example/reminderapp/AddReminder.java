@@ -128,6 +128,8 @@ public class AddReminder extends AppCompatActivity {
             Toast.makeText(AddReminder.this, "Reminder Set!", Toast.LENGTH_SHORT).show();
             AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
             Intent intent = new Intent(AddReminder.this, receiver.class);
+            intent.putExtra("Title", title_input.getText().toString());
+            intent.putExtra("Desc", desc_input.getText().toString());
             PendingIntent pendingIntent = PendingIntent.getBroadcast(AddReminder.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, timer, pendingIntent);
         }
