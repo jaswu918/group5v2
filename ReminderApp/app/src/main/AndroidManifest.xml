@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.reminderapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ReminderApp">
+        <activity
+            android:name=".reminderView"
+            android:exported="false"
+            android:parentActivityName=".Homepage"/>
+        <activity
+            android:name=".AddReminder"
+            android:exported="false"
+            android:label="Add Reminder"
+            android:parentActivityName=".Homepage" />
+        <activity
+            android:name=".QuickNotes"
+            android:exported="false"
+            android:label="Quick Notes"
+            android:parentActivityName=".Homepage" />
+        <activity
+            android:name=".addQuickNotes"
+            android:exported="false"
+            android:label="Add Quick Notes"
+            android:parentActivityName=".QuickNotes" />
+        <activity
+            android:name=".ChangeCode"
+            android:exported="false"
+            android:label="Change Code" />
+        <activity
+            android:name=".Settings"
+            android:exported="false"
+            android:label="Settings"
+            android:parentActivityName=".Homepage" />
+        <activity
+            android:name=".Homepage"
+            android:exported="false"
+            android:label="Homepage" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".receiver" />
+    </application>
+
+</manifest>
